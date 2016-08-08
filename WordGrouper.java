@@ -21,20 +21,12 @@ public class WordGrouper {
 	public static void main(String[] args) {
 		if (args.length < 2) {
 			System.out.println("Usage: java WordGrouper path/to/input.txt"
-			+ " path/to/output.txt <file # delim> <word delim>");
+			+ " path/to/output.txt");
 			System.exit(1);
 		}
 
 		String inputName = args[0];
 		String outputName = args[1];
-		String lineDelim = ". ";
-		String wordDelim = ", ";
-
-		// Include optional delimiters
-		if (args.length == 4) {
-			lineDelim = args[2];
-			wordDelim = args[3];
-		}
 
 		// try-with-resources automatically closes these streams afterwards
 		// also I chained everything because laziness...
