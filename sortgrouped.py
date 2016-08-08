@@ -1,6 +1,9 @@
 import sys, os, operator
 
-def append_to_row(input, output):
+'''
+Sorts grouped characters from greatest number of words to least.
+'''
+def sort_grouped(input, output):
 	try:
 		with open(input, 'r') as inputf, open(output, 'w') as outputf:
 			words = {}
@@ -18,8 +21,8 @@ def append_to_row(input, output):
 
 			sorted_list = sorted(words.items(), key=lambda x: len(x[1]), reverse=True)
 			for s in sorted_list:
-				#row = '%s: %s\n'%(s[0].decode('UTF-8').encode('UTF-8'), ", ".join(s[1]).decode('UTF-8').encode('UTF-8'))
-				row = '%s: %s\n'%(s[0].decode('UTF-8').encode('UTF-8'), len(s[1]))
+				row = '%s: %s\n'%(s[0].decode('UTF-8').encode('UTF-8'), ", ".join(s[1]).decode('UTF-8').encode('UTF-8'))
+				#row = '%s: %s\n'%(s[0].decode('UTF-8').encode('UTF-8'), len(s[1]))
 				#print row
 				outputf.write(row)
 

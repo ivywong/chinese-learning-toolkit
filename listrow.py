@@ -1,5 +1,9 @@
 import sys, os
 
+'''
+Appends all the words in a word-per-newline file as one row in a specified text
+file, with the filename or a specified name as the row label.
+'''
 def append_to_row(input, output, *optional):
 	try:
 		with open(input, 'r') as inputf, open(output, 'a+') as outputf:
